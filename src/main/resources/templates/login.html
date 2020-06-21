@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"></link>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"></link>
+</head>
+<body>
+<form method="post" th:action="@{/login}" class="form-box" animated fadeInUp>
+
+    <h1 class="form-title">Ingresar</h1>
+    <input type="text" id="username" name="username" placeholder="Usuario" autofocus>
+    <input type="password"id="password" name="password" placeholder="Contraseña">
+    <input name="_csrf" type="hidden" value="bf0b10b1-36cf-42bf-a16c-cc9cde9b6903" />
+    <button type="submit">
+        Acceder
+    </button>
+</form>
+</body>
+</html>

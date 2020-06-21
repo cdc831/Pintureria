@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="plantilla/template :: head"></head>
+<body>
+  <section id="container">
+    <header th:replace="plantilla/template :: header"></header>
+    <aside th:replace="plantilla/template :: aside"></aside>
+    <section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Stock de Productos</h3>
+        <div class="row mt">
+          <div class="col-lg-12">
+            <div class="content-panel">
+              <h4><i class="fa fa-angle-right"></i> Solicite un nuevo producto </h4>
+              <section id="no-more-tables">
+                <table class="table table-bordered table-striped table-condensed cf">
+                  <thead class="cf">
+                    <tr>
+                      <th>Producto</th>
+                      <th class="numeric">Precio</th>
+                      <th class="numeric">Stock</th>
+                      <th class="center">Solicitar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
+                      <td class="numeric">$1.38</td>
+                      <td class="numeric">10</td>
+                      <td class="center"><button type="button" class="btn btn-theme btn-xs"><i class="fa fa-download"></i></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <!-- /content-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+  </section>
+<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+</html>
