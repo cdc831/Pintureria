@@ -7,39 +7,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 @Controller
 @Log
-public class indexCrontoller {
+public class productsController {
 
     @Autowired
     ProductsServiceImpl productsServiceImpl;
 
-    @GetMapping("/login")
-    public String login(Model model){
-        model.addAttribute("titulo", "Login");
-        return "login";
-    }
-
-    @GetMapping({"/index","/","/home"})
-    public String index(Model model){
+    @GetMapping("/formNuevoPedido")
+    public String formNuevoPedido(Model model){
         List<Products> listaProductos = productsServiceImpl.listarProductos();
+//        for (Products products: listaProductos) {
+//            log.info(products.getId_product() + " " + products.getProduct() + " " + products.getPrice());
+//        }
         model.addAttribute("listaDeProductos",listaProductos);
-        return "index";
+        return "frmNuevoPedido";
     }
 
-    @GetMapping("/gestionUsers")
-    public String gestionUsers(){
-        return "gestionUsers";
+    @GetMapping("/formNuevoPedido/{id}")
+    public String formNuevoPedido(@PathVariable(name = "id") Integer id, Model model){
+
+        return "frmNuevoPedido";
     }
-
-    @GetMapping("/gestionStock")
-    public String gestionStock(){
-        return "gestionStock";
-    }
-
-
 }

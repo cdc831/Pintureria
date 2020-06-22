@@ -14,9 +14,10 @@ public class Products {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_product;
     private String product;
+    private Integer stock;
     private Double price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_details")
-    private Details_Sales details_sales;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "id_details")
+//    private Details_Sales details_sales;
 }
